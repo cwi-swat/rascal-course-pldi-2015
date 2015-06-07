@@ -12,7 +12,9 @@
 * [https://github.com/cwi-swat/rascal-course-pldi-2015.git](https://github.com/cwi-swat/rascal-course-pldi-2015.git)
 * In this repository:
 	* `doc/Exercises.[md|pdf]` (this text)
-	* `RascalCheatSheet.pdf` (overview of Rascal features)
+	* `doc/RascalCheatSheet.pdf` (overview of Rascal features)
+	* `presentations/*` (all course presentations)
+	
 
 
 ### Three Exercise Tracks
