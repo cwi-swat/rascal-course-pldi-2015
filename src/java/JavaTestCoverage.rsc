@@ -3,8 +3,10 @@ module java::JavaTestCoverage
 import lang::java::m3::Core;
 import lang::java::jdt::m3::Core;
 import java::JUnit;
+import util::ResourceMarkers;
+import Message;
 
-rel[loc,loc] getCalls(M3 m) 
+rel[loc,loc] calls(M3 m) 
   = m@methodInvocation
   + m@methodInvocation o m@methodOverrides<1,0>
   ; 
@@ -18,15 +20,19 @@ set[loc] notTouchedByUnitTests(M3 m)
   - testMethods(m) 
   - ignoredMethods(m) 
   - constructors(m) 
-  - (getCalls(m)+)[testMethods(m)];
+  - (calls(m)+)[testMethods(m)];
   
 set[loc] notDirectlyUnitTested(M3 m)
   = methods(m) 
   - testMethods(m) 
   - ignoredMethods(m)
   - constructors(m) 
-  - getCalls(m)[testMethods(m)]
+  - calls(m)[testMethods(m)]
   ;
   
-set[loc] deadMethods(M3 m) = methods(m) - getCalls(m)<1> - testMethods(m);
+set[loc] deadMethods(M3 m) = methods(m) - calls(m)<1> - testMethods(m);
   
+void unMarkMethods(loc project) = removeMessageMarkers(project);
+  
+void markMethods(set[loc] methods, str msg)
+  = addMessageMarkers({warning(msg, m) | m <- methods});
