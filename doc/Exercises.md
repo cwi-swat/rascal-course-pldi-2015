@@ -9,11 +9,15 @@
 
 ### Course Repository
 
-* [https://github.com/cwi-swat/rascal-course-pldi-2015.git](https://github.com/cwi-swat/rascal-course-pldi-2015.git)
-* In this repository:
-	* `doc/Exercises.[md|pdf]` (this text)
-	* `doc/RascalCheatSheet.pdf` (overview of Rascal features)
-	* `presentations/*` (all course presentations)
+* [https://github.com/cwi-swat/rascal-course-pldi-2015.git](https://github.com/cwi-swat/rascal-course-pldi-2015.git) 
+
+In this repository:
+
+   - `doc/Exercises.[md|pdf]` (this text)
+   - `doc/RascalCheatSheet.pdf` (overview of Rascal features)
+   - `presentations/*` (all course presentations)
+   - `src/*` (template code for the exercises)
+   - `lib/*` (library code used by the exercises)
 	
 ### Places to Find Rascal Examples
 
@@ -26,7 +30,7 @@
 You can select one of three exercise tracks (more details below):
 
 * Hack Your Javascript
-* Java Metrics
+* Java Static Test Coverage
 * PHP Analysis
 
 ## Track 1: Hack Your Javascript
@@ -52,16 +56,25 @@ The Javascript exercises and all related sources and documentation can be found 
 2. Import in Eclipse (File -> Import...)
 3. In `src/Series1.rsc` and `src/Series2.rsc` you find skeleton answers to be filled in by you as well as tests to check your answer.
 
-## Track 2: Java Test Quality
+## Track 2: Java Static Test Coverage
 
-### The _Java Test Quality Track Illustrates
+### The Java Static Test Coverage Track Illustrates
 
-* The reusable (but not generic) intermediate model for OO languages M3
+* M3: reusable (_not_ language independent) intermediate model for PL
 * URI `loc` data-type for referencing and hyperlinking source code artifacts
-* M3 query and reporting
-* AST pattern matching
+* M3 query and reporting using relational calculus
+* AST (abstract) pattern matching
  
 ### Getting started with the _Java Metrics_ Track
+
+* `File->Import`, Existing Eclipse Project, snakesAndLadders from the `rascal-course-pldi-2015` clone
+* start a console for the `rascal-course-pldi-2015` project
+* `:edit analysis::m3::Core` language independent part of M3
+* `:edit lang::java::m3::Core` Java extensions to M3
+* `:edit lang::java::jdt::m3::Core` Eclipse API to generate 
+* `import lang::java::jdt::m3::Core;`
+* `import lang::java::m3::Core;`
+
 
 
 ## Track 3: PHP Analysis
