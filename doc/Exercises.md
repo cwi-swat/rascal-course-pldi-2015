@@ -52,10 +52,15 @@ The Javascript exercises and all related sources and documentation can be found 
 2. Import in Eclipse (File -> Import...)
 3. In `src/Series1.rsc` and `src/Series2.rsc` you find skeleton answers to be filled in by you as well as tests to check your answer.
 
+## Track 2: Java Test Quality
 
+### The _Java Test Quality Track Illustrates
 
-## Track 2: Java Metrics
-### The _Java Metrics_ Track Illustrates
+* The reusable (but not generic) intermediate model for OO languages M3
+* URI `loc` data-type for referencing and hyperlinking source code artifacts
+* M3 query and reporting
+* AST pattern matching
+ 
 ### Getting started with the _Java Metrics_ Track
 
 
