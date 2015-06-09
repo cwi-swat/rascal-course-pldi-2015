@@ -52,9 +52,8 @@ set[loc] notTouchedByUnitTests(M3 m)
 // Call this function and switch to the "Problems" view to see the effect:
 void problems(M3 m) {
   void markMethods(set[loc] methods, str msg) = addMessageMarkers({warning(msg, x) | x <- methods});
-  void unMarkMethods(loc project) = removeMessageMarkers(project);
     
-  unMarkMethods(m.id + "src");
+  removeMessageMarkers(m.id + "src");
   markMethods(deadMethods(m), "methods is never called"); // 2: TODO TODO TODO filter the getters
   markMethods(notDirectlyUnitTested(m), "method is not directly unit tested");
   markMethods(notTouchedByUnitTests(m), "method is not reachable from unit tests");
