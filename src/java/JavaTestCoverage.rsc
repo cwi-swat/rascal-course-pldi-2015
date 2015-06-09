@@ -1,7 +1,7 @@
 module java::JavaTestCoverage
 
 /* This file contains a number of pre-written functions to analyze JUnit test code and the 
- * code it tests. Then two main functions which report the results of the analysis and then
+ * code it tests. Then two main functions (stats, problems) which report the results of the analysis and then
  * some exercises to extend and improve the quality of the analysis.
  * 
  * We are over-approximating test coverage analysis by interpreting the static call graph.
