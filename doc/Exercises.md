@@ -15,7 +15,11 @@
 	* `doc/RascalCheatSheet.pdf` (overview of Rascal features)
 	* `presentations/*` (all course presentations)
 	
+### Places to Find Rascal Examples
 
+* The three exercise tracks described below.
+* Rascal Recipes: [http://tutor.rascal-mpl.org/Recipes/Recipes.html](http://tutor.rascal-mpl.org/Recipes/Recipes.html)
+* Rascal at Rosetta Code: [http:rosettacode.org/wiki/Category:Rascal](http:rosettacode.org/wiki/Category:Rascal)
 
 ### Three Exercise Tracks
 
