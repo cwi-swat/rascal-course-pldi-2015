@@ -13,3 +13,8 @@ Useful links:
 * Rascal home page: http://www.rascal-mpl.org
 * Rascal at GitHub: https://github.com/cwi-swat/rascal
 * The Rascal Tutor: http://tutor.rascal-mpl.org
+
+In this repository:
+    * `doc/Exercises.[md|pdf]` (overview of all exercises)
+    * `doc/RascalCheatSheet.pdf` (overview of Rascal features)
+    * `presentations/*` (all course presentations)
