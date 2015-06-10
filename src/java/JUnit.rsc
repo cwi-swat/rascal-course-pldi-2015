@@ -1,5 +1,6 @@
 module java::JUnit
 
+// this file contains utility functions to detect methods and classes annotated for JUnit
 import lang::java::m3::Core;
 
 set[loc] getTestClasses(M3 m) 

@@ -58,24 +58,40 @@ The Javascript exercises and all related sources and documentation can be found 
 
 ## Track 2: Java Static Test Coverage
 
-### The Java Static Test Coverage Track Illustrates
+### The _Java Static Test Coverage_ Track Illustrates
 
 * M3: reusable (_not_ language independent) intermediate model for PL
 * URI `loc` data-type for referencing and hyperlinking source code artifacts
 * M3 query and reporting using relational calculus
 * AST (abstract) pattern matching
  
-### Getting started with the _Java Metrics_ Track
+### Getting started with the _Java Static Test Coverage_ Track
 
-* `File->Import`, Existing Eclipse Project, snakesAndLadders from the `rascal-course-pldi-2015` clone
+Get the code to analyze:
+
+* Import the example project like so: `File` menu, `Import`, `General`, `Existing Eclipse Project`, select `snakesAndLadders` to import from the `rascal-course-pldi-2015` clone
 * start a console for the `rascal-course-pldi-2015` project
-* `:edit analysis::m3::Core` language independent part of M3
-* `:edit lang::java::m3::Core` Java extensions to M3
-* `:edit lang::java::jdt::m3::Core` Eclipse API to generate 
+
+Type the following commands to get started:
+
 * `import lang::java::jdt::m3::Core;`
 * `import lang::java::m3::Core;`
+* `m = createM3FromEclipseProject(|project://snakesAndLadders/|);`  
 
+Then import and edit the source file you will edit:
 
+* `import java::JavaTestCoverage;`
+* `:edit java::JavaTestCoverage`
+
+The *TODO*s in the code comments at the bottom of the file point to places where you are expected to add to the existing functionality. 
+
+First try out some minor queries on the console REPL:
+
+* `m@methodInvocation`
+* `iprintln(m@containment)`
+* Click on URIs in the console to jump to the source
+* `import util::ValueUI;`
+* `text(m@methodInvocation o m@methodOverrides<1,2>)`
 
 ## Track 3: PHP Analysis
 ### The _PHP Analysis_ Track Illustrates
