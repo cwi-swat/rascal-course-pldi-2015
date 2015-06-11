@@ -22,6 +22,7 @@ import List;
 import Exception;
 import DateTime;
 import util::ShellExec;
+import util::Resources;
 
 import lang::php::pp::PrettyPrinter;
 
@@ -107,7 +108,7 @@ public Script loadPHPFile(loc l) throws AssertionFailed {
 @doc{Load a single PHP file, with options for location annotations and unique node ids.}
 public Script loadPHPFile(loc l, bool addLocationAnnotations, bool addUniqueIds) throws AssertionFailed {
 	if (!exists(l)) return errscript("Location <l> does not exist");
-	if (l.scheme notin {"file","home"}) return errscript("Only file and home locations are supported");
+	if (l.scheme notin {"file","home","project"}) return errscript("Only file, home, and project locations are supported");
 	if (!isFile(l)) return errscript("Location <l> must be a file");
 
 	logMessage("Loading file <l>", 2);
@@ -117,6 +118,10 @@ public Script loadPHPFile(loc l, bool addLocationAnnotations, bool addUniqueIds)
 	if (includeLocationInfo) opts += "--addDecl";
 	if (addUniqueIds) opts += "-i";
 	if (l.scheme == "home") opts += "-r";
+	if (l.scheme == "project") {
+		opts += "-n<l.authority>";
+		opts += "-d<location(|project://<l.authority>|).path>";
+	}
 	if (includePhpDocs) opts += "--phpdocs";
 	
 	Script res = parsePHPfile(l, opts, errscript("Could not parse file <l.path>")); 

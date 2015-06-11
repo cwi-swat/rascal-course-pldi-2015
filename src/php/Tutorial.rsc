@@ -9,11 +9,11 @@ import lang::php::pp::PrettyPrinter;
 import List;
 import Set;
 import String;
-
+import ValueIO;
 import util::ValueUI;
 
-public loc wp422 = |home:///Projects/rascal-course-pldi-2015/data/systems/WordPress/wordpress-4.2.2|;
-public loc wpload = |home:///Projects/rascal-course-pldi-2015/data/systems/WordPress/wordpress-4.2.2/wp-load.php|;
+private loc wp422 = |project://rascal-course-pldi-2015/data/systems/WordPress/wordpress-4.2.2|;
+private loc wpload = |project://rascal-course-pldi-2015/data/systems/WordPress/wordpress-4.2.2/wp-load.php|;
 
 public Script parseWithoutLocations() {	
 	return loadPHPFile(wpload, false, false);
@@ -33,6 +33,15 @@ public void parseWithLocationsAndView() {
 
 public System parseWordPress() {
 	return loadPHPFiles(wp422);	
+}
+
+public void buildAndSerializeWordPress() {
+	wp = loadPHPFiles(wp422);
+	writeBinaryValueFile(|project://rascal-course-pldi-2015/data/serialized/wordpress-4.2.2.pt|, wp);
+}
+
+public System loadWordPress() {
+	return readBinaryValueFile(#System, |project://rascal-course-pldi-2015/data/serialized/wordpress-4.2.2.pt|);
 }
 
 public rel[loc callLoc, Expr callExpr] findAllCalls(System s) {
