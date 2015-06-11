@@ -31,6 +31,10 @@ public void parseWithLocationsAndView() {
 	text(parseWithLocations());
 }
 
+public void viewBasedOnPreParsed() {	
+	text(loadWordPress()[wpload]);
+}
+
 public System parseWordPress() {
 	return loadPHPFiles(wp422);	
 }
@@ -50,8 +54,4 @@ public rel[loc callLoc, Expr callExpr] findAllCalls(System s) {
 
 public rel[loc callLoc, Expr callExpr] findAllMySQLCalls(System s) {
 	return { < c@at, c > | /c:call(name(name(fn)),_) := s, /mysql/ := fn };
-}
-
-public rel[loc callLoc, Expr callExpr] findAllCallsToMySQLQuery(System s) {
-	return { < c@at, c > | /c:call(name(name("mysql_query")),_) := s };
 }
