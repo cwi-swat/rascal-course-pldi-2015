@@ -88,10 +88,15 @@ public rel[loc declarationLoc, loc callLoc, Expr callExpr] findAllDifferingCalls
 }
 public rel[loc funLoc, str funName] varargsCheckers(System s) {
 	bool checksForArgs(list[Stmt] fbody) {
+		// This gets back a set containing each call to one of the functions we are
+		// interested in. If it isn't empty, we know we found one.
 		return !isEmpty({ c | /c:call(name(name(fn)),_) := fbody,
 							  fn in { "func_get_args", "func_num_args", "func_get_arg" } });
 	}
 
+	// The call to checksForArgs will be true if the body uses one of the functions that
+	// is used for checking the arguments passed in to the function. We could also do
+	// something similar for method declarations.
 	return { < f@at, fn > | /f:function(fn,_,_,fbody) := s, checksForArgs(fbody) };
 }
 
@@ -99,6 +104,7 @@ public rel[loc funLoc, str funName] varargsCheckers(System s) {
 	Find all calls to either call_user_func or call_user_func_array.
 }
 public rel[loc callLoc, Expr callExpr] findDynamicInvocations(System s) {
+	// This is similar to the examples above, but checks against two different function names.
 	return { < c@at, c > | /c:call(name(name(fn)),_) := s,
 						   fn in { "call_user_func", "call_user_func_array" } };
 }
