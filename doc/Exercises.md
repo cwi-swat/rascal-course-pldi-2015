@@ -117,16 +117,17 @@ First try out some minor queries on the console REPL:
 
 All the code to analyze is included in the `data` directory, under `systems/WordPress/wordpress-4.2.2`. This is identical to the WordPress code available on the WordPress website under the release archive. Note that the WordPress installer has not been run on this copy, so the settings file created by the installer (`wp-settings.php`) is not present.
 
-* WordPress website: [https://wordpress.org/](https://wordpress.org/)
-* WordPress Release Archive: [https://wordpress.org/download/release-archive/](https://wordpress.org/download/release-archive/)
 There are two options for getting access to the WordPress ASTs:
 
 1. Build them from the WordPress source. This requires our custom fork of a PHP parser written in PHP, available on GitHub, and a recent version of PHP. Further instructions can be found on the PHP AiR GitHub project page. Note that this also requires some configuration for your environment; a sample configuration file is part of the PHP AiR distribution.
 
+2. Use the existing serialized form of the ASTs. This is recommended for the tutorial, and removes the dependency on PHP.
+
+### Useful Links ###
+* WordPress website: [https://wordpress.org/](https://wordpress.org/)
+* WordPress Release Archive: [https://wordpress.org/download/release-archive/](https://wordpress.org/download/release-archive/)
 * PHP Parser GitHub Page: [https://github.com/cwi-swat/PHP-Parser](https://github.com/cwi-swat/PHP-Parser)
 * PHP AiR GitHub Page: [https://github.com/cwi-swat/php-analysis/](https://github.com/cwi-swat/php-analysis/)
-
-2. Use the existing serialized form of the ASTs. This is recommended for the tutorial, and removes the dependency on PHP.
 
 ### Doing the Exercises ###
 
