@@ -1,5 +1,10 @@
 # Overview Exercises Rascal Tutorial PLDI 2015
 
+## Presenters
+* Mark Hills: [http://www.cs.ecu.edu/hillsma/](http://www.cs.ecu.edu/hillsma/)
+* Paul Klint: [http://homepages.cwi.nl/~paulk/](http://homepages.cwi.nl/~paulk/)
+* Jurgen Vinju: [http://homepages.cwi.nl/~jurgenv/](http://homepages.cwi.nl/~jurgenv/)
+
 ## Resources
 ### General Rascal Resources
 
