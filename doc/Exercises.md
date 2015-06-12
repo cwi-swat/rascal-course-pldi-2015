@@ -92,6 +92,8 @@ First try out some minor queries on the console REPL:
 * Click on URIs in the console to jump to the source
 * `import util::ValueUI;`
 * `text(m@methodInvocation o m@methodOverrides<1,0>)`
+* `problems(m)` and look at the Problems view to see the results.
+* `stats(m)` and look at the printed test coverage report.
 
 ## Track 3: PHP Analysis
 
