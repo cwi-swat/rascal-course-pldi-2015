@@ -1,5 +1,10 @@
 # Overview Exercises Rascal Tutorial PLDI 2015
 
+<p
+  align="center">
+  <img width="200" height="200" src="http://rosettacode.org/mw/images/c/cd/RascalLogo.png">
+</p>
+  
 ## Presenters
 * Mark Hills: [http://www.cs.ecu.edu/hillsma/](http://www.cs.ecu.edu/hillsma/)
 * Paul Klint: [http://homepages.cwi.nl/~paulk/](http://homepages.cwi.nl/~paulk/)
