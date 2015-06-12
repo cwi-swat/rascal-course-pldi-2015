@@ -69,7 +69,7 @@ The Javascript exercises and all related sources and documentation can be found 
 
 Get the code to analyze:
 
-* Import the example project like so: `File` menu, `Import`, `General`, `Existing Eclipse Project`, select `snakesAndLadders` to import from the `rascal-course-pldi-2015` clone
+* Import the example project as follows: `File` menu, `Import`, `General`, `Existing Eclipse Project`, select `snakesAndLadders` (already provided in `data/snakesAndLadders`) to import from the `rascal-course-pldi-2015` clone
 * start a console for the `rascal-course-pldi-2015` project
 
 Type the following commands to get started:
@@ -91,7 +91,7 @@ First try out some minor queries on the console REPL:
 * `iprintln(m@containment)`
 * Click on URIs in the console to jump to the source
 * `import util::ValueUI;`
-* `text(m@methodInvocation o m@methodOverrides<1,2>)`
+* `text(m@methodInvocation o m@methodOverrides<1,0>)`
 
 ## Track 3: PHP Analysis
 ### The _PHP Analysis_ Track Illustrates
