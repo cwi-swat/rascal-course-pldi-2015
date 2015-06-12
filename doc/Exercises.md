@@ -99,7 +99,7 @@ First try out some minor queries on the console REPL:
 
 * Using the PHP parser extract ASTs from individual files and entire PHP systems (optional, requires php)
 * AST (abstract) pattern matching over the extracted ASTs
-* Crafting queries to extract information into intermediate structures useful for additional analysis
+* Crafting queries to extract information into intermediate structures useful as a basis for richer analysis and analytics
  
 ### Getting started with the _PHP Analysis_ Track
 
