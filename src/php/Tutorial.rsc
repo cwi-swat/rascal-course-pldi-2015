@@ -55,3 +55,7 @@ public rel[loc callLoc, Expr callExpr] findAllCalls(System s) {
 public rel[loc callLoc, Expr callExpr] findAllMySQLCalls(System s) {
 	return { < c@at, c > | /c:call(name(name(fn)),_) := s, /mysql/ := fn };
 }
+
+public rel[loc callLoc, Expr callExpr] findAllCallsOnThis(System s) {
+	return { < c@at, c > | /c:methodCall(var(name(name("this"))),_,_) := s };
+}
