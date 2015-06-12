@@ -94,5 +94,34 @@ First try out some minor queries on the console REPL:
 * `text(m@methodInvocation o m@methodOverrides<1,0>)`
 
 ## Track 3: PHP Analysis
+
 ### The _PHP Analysis_ Track Illustrates
+
+* Using the PHP parser extract ASTs from individual files and entire PHP systems (optional, requires php)
+* AST (abstract) pattern matching over the extracted ASTs
+* Crafting queries to extract information into intermediate structures useful as a basis for richer analysis and analytics
+ 
 ### Getting started with the _PHP Analysis_ Track
+
+All the code to analyze is included in the `data` directory, under `systems/WordPress/wordpress-4.2.2`. This is identical to the WordPress code available on the [WordPress website](https://wordpress.org/) under the [Release Archive](https://wordpress.org/download/release-archive/). Note that the WordPress installer has not been run on this copy, so the settings file created by the installer (`wp-settings.php`) is not present.
+
+There are two options for getting access to the WordPress ASTs:
+
+1. Build them from the WordPress source. This requires our version of the [PHP Parser](https://github.com/cwi-swat/PHP-Parser) available on GitHub and a recent version of PHP. Further instructions can be found on the [PHP AiR GitHub Page](https://github.com/cwi-swat/php-analysis/). Note that this also requires some configuration for your environment; a sample configuration file is part of the PHP AiR distribution.
+
+2. Use the existing serialized form of the ASTs. This is recommended for the tutorial, and removes the dependency on PHP.
+
+### Doing the Exercises ###
+
+To use the serialized ASTs, run the following in a Rascal console:
+
+* `import lang::php::ast::AbstractSyntax;`
+* `import lang::php::ast::System;`
+* `import php::Tutorial;`
+* `wp = loadWordPress();`
+
+If you have instead built the ASTs from source, you should have a statement like `wp = loadPHPFiles(wp422)` in your console, where `wp422` is the location of the WordPress 4.2.2 files (this is declared as a private variable in `php::Tutorial`, but you can copy it into the console or make it public in the module to use it yourself).
+
+This will return a PHP `System`, which is a map from script locations to ASTs for scripts.
+
+With this done, it is possible to start the exercises. These are in the `php::Exercises` module, with *TODO*s describing what needs to be done and documentation comments for each function. You should edit this module and import it to run your code (right click on the module and select `Import Current Module in Console`). The solutions to the exercises are in the `php::Solutions` module. Note that the exercises tend to increase in complexity, but this isn't absolute.
