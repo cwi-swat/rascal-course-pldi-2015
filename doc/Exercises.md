@@ -103,7 +103,7 @@ First try out some minor queries on the console REPL:
  
 ### Getting started with the _PHP Analysis_ Track
 
-All the code to analyze is included in the `data` directory, under `systems/WordPress/wordpress-4.2.2`. This is identical to the WordPress code available on the [WordPress website](https://wordpress.org/) under the [Release Archive](https://wordpress.org/download/release-archive/). Note that this has not been installed, so the settings file created by the installer is not present.
+All the code to analyze is included in the `data` directory, under `systems/WordPress/wordpress-4.2.2`. This is identical to the WordPress code available on the [WordPress website](https://wordpress.org/) under the [Release Archive](https://wordpress.org/download/release-archive/). Note that the WordPress installer has not been run on this copy, so the settings file created by the installer (`wp-settings.php`) is not present.
 
 There are two options for getting access to the WordPress ASTs:
 
