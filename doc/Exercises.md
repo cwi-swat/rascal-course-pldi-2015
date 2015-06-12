@@ -1,4 +1,4 @@
-# Overview Exercises Rascal Course PLDI 2015
+# Overview Exercises Rascal Tutorial PLDI 2015
 
 ## Resources
 ### General Rascal Resources
