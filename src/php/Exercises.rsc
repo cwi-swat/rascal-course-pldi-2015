@@ -31,15 +31,6 @@ public rel[loc callLoc, Expr callExpr] findAllNullaryCalls(System s) {
 }
 
 @doc{
-	Find any function calls that are given 2 parameters.
-}
-public rel[loc callLoc, Expr callExpr] findAllBinaryCalls(System s) {
-	// TODO: Find just the function calls that are given 2 actual parameters
-	// and return these as a relation from locations to call expressions.
-	return { };
-}
-
-@doc{
 	Find any calls that are only given string literals as parameters.
 }
 public rel[loc callLoc, Expr callExpr] findAllCallsWithOnlyStringParams(System s) {
